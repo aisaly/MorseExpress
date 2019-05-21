@@ -8,6 +8,7 @@
 
 import UIKit
 import Messages
+import Foundation
 
 class MessagesViewController: MSMessagesAppViewController {
     
@@ -92,7 +93,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 
     @objc private func timeHasExceeded() {
-        insertSpace()
+        onPause()
     }
 
     @IBAction func dotHandle(_ sender: Any) {
@@ -103,19 +104,38 @@ class MessagesViewController: MSMessagesAppViewController {
         insertText(text: "-")
     }
 
-    private func insertSpace(){
+    private func onPause(){
         currentString += " "
+        print(decode())
         updateBubbleMessage()
     }
 
-    private func insertText(s: String) {
-        currentString += s
+    private func insertText(text: String) {
+        currentString += text
         print(currentString)
         resetIdleTimer()
         updateBubbleMessage()
     }
 
-    private updateBubbleMessage(){
+    private func decode() -> String {
+        let pattern = "\\w*([\\.\\-]+)\\ "
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
+        if (matches == []) {
+            return ""
+        }
+        var decodedString = ""
+        matches.forEach { match in
+            let range = match.range(at:1)
+            let swiftRange = Range(range, in: currentString)
+            let morseChar = currentString[swiftRange!]
+            let textChar = decodeCharacter(morseCode: String(morseChar))
+            decodedString += textChar
+        }
+        return decodedString
+    }
+
+    private func updateBubbleMessage(){
         let layout = MSMessageTemplateLayout()
         layout.caption = currentString
         let message = MSMessage()

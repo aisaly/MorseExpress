@@ -47,5 +47,3 @@ func decodeString(morseCode: String) -> String {
         .map{ decodeCharacter(morseCode: String($0)) }
         .joined(separator: "")
 }
-
-print(decodeString(morseCode: ". .- -"))
