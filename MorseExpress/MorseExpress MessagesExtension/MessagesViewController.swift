@@ -11,6 +11,10 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
+    var currentMessage: MSMessage!
+    var currentString = "";
+    var active = false;
+
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
     
@@ -68,12 +72,22 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
+    
+    
+    func onTimeout(){
+    }
 
     @IBAction func dotHandle(_ sender: Any) {
-        // This will execute on dot press
+        currentString += ".";
+        print(currentString);
+        onTimeout();
     }
     
     @IBAction func dashHandle(_ sender: Any) {
-        // This will execute on dash press
+        currentString += "-";
+        print(currentString);
+        onTimeout();
     }
+
+
 }
