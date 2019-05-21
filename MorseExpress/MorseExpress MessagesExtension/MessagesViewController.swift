@@ -12,8 +12,8 @@ import Messages
 class MessagesViewController: MSMessagesAppViewController {
     
     var currentMessage: MSMessage!
-    var currentString = "";
-    var active = false;
+    var currentString = ""
+    var active = false
 
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
@@ -53,7 +53,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         // Called when the user taps the send button.
-        currentString = "";
+        currentString = ""
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -75,7 +75,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     private var idleTimer: Timer?
-    private var timeoutInSeconds = 1.0;
+    private var timeoutInSeconds = 1.0
 
     private func resetIdleTimer() {
         if let idleTimer = idleTimer {
@@ -92,31 +92,35 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 
     @objc private func timeHasExceeded() {
-        currentString += " "
+        insertSpace()
     }
 
     @IBAction func dotHandle(_ sender: Any) {
-        send(s: ".");
+        insertText(text: ".")
     }
     
     @IBAction func dashHandle(_ sender: Any) {
-        send(s: "-");
+        insertText(text: "-")
     }
 
+    private func insertSpace(){
+        currentString += " "
+        updateBubbleMessage()
+    }
 
-    private func send(s: String) {
-        currentString += s;
-        print(currentString);
-        // update Timer 
-        resetIdleTimer();
+    private func insertText(s: String) {
+        currentString += s
+        print(currentString)
+        resetIdleTimer()
+        updateBubbleMessage()
+    }
 
-        // update bubble text
+    private updateBubbleMessage(){
         let layout = MSMessageTemplateLayout()
-        layout.caption = currentString;
-        let message = MSMessage();
-        message.layout = layout;
-
-        activeConversation?.insert(message, completionHandler: nil);
+        layout.caption = currentString
+        let message = MSMessage()
+        message.layout = layout
+        activeConversation?.insert(message, completionHandler: nil)
     }
 
 
