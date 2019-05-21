@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9BB6CEF229440E4002B136C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6CEE229440E4002B136C /* Assets.xcassets */; };
+		A9BB6CF6229440E4002B136C /* MorseExpress MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A9BB6CFB229440E4002B136C /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BB6CFA229440E4002B136C /* Messages.framework */; };
+		A9BB6CFE229440E4002B136C /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB6CFD229440E4002B136C /* MessagesViewController.swift */; };
+		A9BB6D01229440E4002B136C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6CFF229440E4002B136C /* MainInterface.storyboard */; };
+		A9BB6D03229440E5002B136C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6D02229440E5002B136C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9BB6CF7229440E4002B136C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9BB6CE5229440E3002B136C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9BB6CF4229440E4002B136C;
+			remoteInfo = "MorseExpress MessagesExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A9BB6D0A229440E5002B136C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A9BB6CF6229440E4002B136C /* MorseExpress MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A9BB6CEB229440E3002B136C /* MorseExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BB6CEE229440E4002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9BB6CF0229440E4002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MorseExpress MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BB6CFA229440E4002B136C /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		A9BB6CFD229440E4002B136C /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		A9BB6D00229440E4002B136C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A9BB6D02229440E5002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9BB6D04229440E5002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9BB6CF2229440E4002B136C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BB6CFB229440E4002B136C /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9BB6CE4229440E3002B136C = {
+			isa = PBXGroup;
+			children = (
+				A9BB6CED229440E3002B136C /* MorseExpress */,
+				A9BB6CFC229440E4002B136C /* MorseExpress MessagesExtension */,
+				A9BB6CF9229440E4002B136C /* Frameworks */,
+				A9BB6CEC229440E3002B136C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9BB6CEC229440E3002B136C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB6CEB229440E3002B136C /* MorseExpress.app */,
+				A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9BB6CED229440E3002B136C /* MorseExpress */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB6CEE229440E4002B136C /* Assets.xcassets */,
+				A9BB6CF0229440E4002B136C /* Info.plist */,
+			);
+			path = MorseExpress;
+			sourceTree = "<group>";
+		};
+		A9BB6CF9229440E4002B136C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB6CFA229440E4002B136C /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9BB6CFC229440E4002B136C /* MorseExpress MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A9BB6CFD229440E4002B136C /* MessagesViewController.swift */,
+				A9BB6CFF229440E4002B136C /* MainInterface.storyboard */,
+				A9BB6D02229440E5002B136C /* Assets.xcassets */,
+				A9BB6D04229440E5002B136C /* Info.plist */,
+			);
+			path = "MorseExpress MessagesExtension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9BB6CEA229440E3002B136C /* MorseExpress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9BB6D0B229440E5002B136C /* Build configuration list for PBXNativeTarget "MorseExpress" */;
+			buildPhases = (
+				A9BB6CE9229440E3002B136C /* Resources */,
+				A9BB6D0A229440E5002B136C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9BB6CF8229440E4002B136C /* PBXTargetDependency */,
+			);
+			name = MorseExpress;
+			productName = MorseExpress;
+			productReference = A9BB6CEB229440E3002B136C /* MorseExpress.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		A9BB6CF4229440E4002B136C /* MorseExpress MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9BB6D07229440E5002B136C /* Build configuration list for PBXNativeTarget "MorseExpress MessagesExtension" */;
+			buildPhases = (
+				A9BB6CF1229440E4002B136C /* Sources */,
+				A9BB6CF2229440E4002B136C /* Frameworks */,
+				A9BB6CF3229440E4002B136C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MorseExpress MessagesExtension";
+			productName = "MorseExpress MessagesExtension";
+			productReference = A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9BB6CE5229440E3002B136C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Alexandra Isaly";
+				TargetAttributes = {
+					A9BB6CEA229440E3002B136C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					A9BB6CF4229440E4002B136C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A9BB6CE8229440E3002B136C /* Build configuration list for PBXProject "MorseExpress" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9BB6CE4229440E3002B136C;
+			productRefGroup = A9BB6CEC229440E3002B136C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9BB6CEA229440E3002B136C /* MorseExpress */,
+				A9BB6CF4229440E4002B136C /* MorseExpress MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9BB6CE9229440E3002B136C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BB6CEF229440E4002B136C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9BB6CF3229440E4002B136C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BB6D03229440E5002B136C /* Assets.xcassets in Resources */,
+				A9BB6D01229440E4002B136C /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9BB6CF1229440E4002B136C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BB6CFE229440E4002B136C /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9BB6CF8229440E4002B136C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9BB6CF4229440E4002B136C /* MorseExpress MessagesExtension */;
+			targetProxy = A9BB6CF7229440E4002B136C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A9BB6CFF229440E4002B136C /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9BB6D00229440E4002B136C /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9BB6D05229440E5002B136C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A9BB6D06229440E5002B136C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9BB6D08229440E5002B136C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 284ADSALRN;
+				INFOPLIST_FILE = "MorseExpress MessagesExtension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = team48.MorseExpress.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9BB6D09229440E5002B136C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 284ADSALRN;
+				INFOPLIST_FILE = "MorseExpress MessagesExtension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = team48.MorseExpress.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A9BB6D0C229440E5002B136C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 284ADSALRN;
+				INFOPLIST_FILE = MorseExpress/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = team48.MorseExpress;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9BB6D0D229440E5002B136C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 284ADSALRN;
+				INFOPLIST_FILE = MorseExpress/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = team48.MorseExpress;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9BB6CE8229440E3002B136C /* Build configuration list for PBXProject "MorseExpress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BB6D05229440E5002B136C /* Debug */,
+				A9BB6D06229440E5002B136C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9BB6D07229440E5002B136C /* Build configuration list for PBXNativeTarget "MorseExpress MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BB6D08229440E5002B136C /* Debug */,
+				A9BB6D09229440E5002B136C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9BB6D0B229440E5002B136C /* Build configuration list for PBXNativeTarget "MorseExpress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BB6D0C229440E5002B136C /* Debug */,
+				A9BB6D0D229440E5002B136C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9BB6CE5229440E3002B136C /* Project object */;
+}
