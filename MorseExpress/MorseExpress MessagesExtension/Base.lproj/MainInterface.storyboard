@@ -17,43 +17,143 @@
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nb0-Qq-3qL">
-                                <rect key="frame" x="82" y="216" width="156" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0b-ic-QwA">
-                                        <rect key="frame" x="98" y="20" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="-"/>
-                                        <connections>
-                                            <action selector="dashHandle:" destination="ObA-dk-sSI" eventType="touchUpInside" id="F0l-Td-it5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ft6-Z6-W68">
-                                        <rect key="frame" x="28" y="20" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="•"/>
-                                        <connections>
-                                            <action selector="dotHandle:" destination="ObA-dk-sSI" eventType="touchUpInside" id="nG8-QK-Omi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.28734108805656433" green="0.56569522619247437" blue="0.88536888360977173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
-                    <connections>
-                        <outlet property="dashButton" destination="E0b-ic-QwA" id="sqE-YW-JF3"/>
-                        <outlet property="dotButton" destination="ft6-Z6-W68" id="CS3-Nf-0nd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="152" y="240"/>
+        </scene>
+        <!--Full View Controller-->
+        <scene sceneID="mwT-o4-MCY">
+            <objects>
+                <viewController storyboardIdentifier="full" id="V2F-jF-bzS" customClass="FullViewController" customModule="MorseExpress_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TJH-rI-8pq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ghZ-v2-f3d">
+                                <rect key="frame" x="0.0" y="180" width="320" height="146"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-X4-424">
+                                        <rect key="frame" x="20" y="7" width="128" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.49230855703353882" green="0.72420024871826172" blue="0.99836570024490356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="•">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dotHandle:" destination="V2F-jF-bzS" eventType="touchUpInside" id="dNu-TN-YJt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K24-R6-Ces">
+                                        <rect key="frame" x="173" y="7" width="128" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.49230855703353882" green="0.72420024871826172" blue="0.99836570024490356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="tintColor" red="0.28734108809999998" green="0.56569522620000001" blue="0.88536888359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dashHandle:" destination="V2F-jF-bzS" eventType="touchUpInside" id="YxF-XQ-d6Q"/>
+                                            <action selector="dotHandle:" destination="V2F-jF-bzS" eventType="touchUpInside" id="1Dx-tG-Hxf"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Prw-2g-O93">
+                                        <rect key="frame" x="60" y="-11" width="200" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28734108809999998" green="0.56569522620000001" blue="0.88536888359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ghZ-v2-f3d" firstAttribute="trailing" secondItem="Fxl-fC-ri8" secondAttribute="trailing" id="JmG-aY-Ypc"/>
+                            <constraint firstItem="ghZ-v2-f3d" firstAttribute="leading" secondItem="TJH-rI-8pq" secondAttribute="leading" id="eX3-tp-She"/>
+                            <constraint firstItem="ghZ-v2-f3d" firstAttribute="leading" secondItem="Fxl-fC-ri8" secondAttribute="leading" id="opJ-Lv-tFm"/>
+                            <constraint firstAttribute="trailing" secondItem="ghZ-v2-f3d" secondAttribute="trailing" id="oyY-Vj-FkT"/>
+                            <constraint firstItem="ghZ-v2-f3d" firstAttribute="top" secondItem="Fxl-fC-ri8" secondAttribute="top" constant="136" id="u4Q-GW-EyE"/>
+                            <constraint firstItem="Fxl-fC-ri8" firstAttribute="bottom" secondItem="ghZ-v2-f3d" secondAttribute="bottom" constant="168" id="vv1-1g-GmU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fxl-fC-ri8"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="dashButton" destination="K24-R6-Ces" id="SEd-UF-HQo"/>
+                        <outlet property="dotButton" destination="Pp0-X4-424" id="XGe-H7-RvU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WEM-sE-K4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.66666666666674" y="83.705357142857139"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="Dxm-j0-wCn">
+            <objects>
+                <viewController storyboardIdentifier="preview" id="mcn-3v-M5K" customClass="PreviewViewController" customModule="MorseExpress_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gls-Kn-TjD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zYX-Bp-Lwp">
+                                <rect key="frame" x="82" y="44" width="156" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RO-7m-HeJ">
+                                        <rect key="frame" x="8" y="0.0" width="66" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.49230855699999998" green="0.72420024869999999" blue="0.99836570020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="•">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dotHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="8vR-6l-Yof"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJh-Ct-kXY">
+                                        <rect key="frame" x="90" y="0.0" width="66" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.49230855699999998" green="0.72420024869999999" blue="0.99836570020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dashHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="to1-RK-DjH"/>
+                                            <action selector="dotHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="EIM-WX-fDr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28734108809999998" green="0.56569522620000001" blue="0.88536888359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zYX-Bp-Lwp" firstAttribute="top" secondItem="wM2-qG-JNG" secondAttribute="top" constant="40" id="1EN-QZ-SQM"/>
+                            <constraint firstItem="zYX-Bp-Lwp" firstAttribute="top" secondItem="wM2-qG-JNG" secondAttribute="top" id="MJZ-PA-8ZT"/>
+                            <constraint firstItem="wM2-qG-JNG" firstAttribute="bottom" secondItem="zYX-Bp-Lwp" secondAttribute="bottom" constant="380" id="XZR-UE-a3y"/>
+                            <constraint firstItem="zYX-Bp-Lwp" firstAttribute="centerX" secondItem="Gls-Kn-TjD" secondAttribute="centerX" id="bbc-Fj-aEC"/>
+                            <constraint firstItem="zYX-Bp-Lwp" firstAttribute="leading" secondItem="wM2-qG-JNG" secondAttribute="leading" constant="82" id="ckb-XX-zhG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wM2-qG-JNG"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="dashButton" destination="gJh-Ct-kXY" id="qxX-bP-rkq"/>
+                        <outlet property="dotButton" destination="0RO-7m-HeJ" id="KXB-fO-dNE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VlF-da-b2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.66666666666674" y="522.99107142857144"/>
         </scene>
     </scenes>
 </document>

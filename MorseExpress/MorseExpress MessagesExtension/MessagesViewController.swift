@@ -48,14 +48,8 @@ class MessagesViewController: MSMessagesAppViewController {
         //check the mapping
     }
     
-    @IBOutlet weak var dotButton: UIButton!
-    @IBOutlet weak var dashButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        dotButton.layer.cornerRadius = 6
-        dashButton.layer.cornerRadius = 6
-        
     }
     
     // MARK: - Conversation Handling
@@ -95,22 +89,44 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Called before the extension transitions to a new presentation style.
-    
-        // Use this method to prepare for the change in presentation style.
+        super.willTransition(to: presentationStyle)
+        
+        // Hide child view controllers during the transition.
+        removeAllChildViewControllers()
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Called after the extension transitions to a new presentation style.
+        super.didTransition(to: presentationStyle)
+        
+        guard let conversation = activeConversation else { fatalError("Expected an active converstation") }
+        presentViewController(for: conversation, with: presentationStyle)
+    }
     
-        // Use this method to finalize any behaviors associated with the change in presentation style.
+    private func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
+        // Remove any child view controllers that have been presented.
+        removeAllChildViewControllers()
+        
+        let controller: UIViewController
+        if presentationStyle == .compact {
+            controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "preview") as UIViewController;()
+        } else {
+            controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "full") as UIViewController;()
+        }
+        
+        addChild(controller)
+        controller.view.frame = view.bounds
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        
+        controller.didMove(toParent: self)
+    }
+    
+    private func removeAllChildViewControllers() {
+        for child in children {
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
     }
 
-    @IBAction func dotHandle(_ sender: Any) {
-        // This will execute on dot press
-    }
-    
-    @IBAction func dashHandle(_ sender: Any) {
-        // This will execute on dash press
-    }
 }
