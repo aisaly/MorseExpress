@@ -53,6 +53,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         // Called when the user taps the send button.
+        currentString = "";
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -106,7 +107,16 @@ class MessagesViewController: MSMessagesAppViewController {
     private func send(s: String) {
         currentString += s;
         print(currentString);
+        // update Timer 
         resetIdleTimer();
+
+        // update bubble text
+        let layout = MSMessageTemplateLayout()
+        layout.caption = currentString;
+        let message = MSMessage();
+        message.layout = layout;
+
+        activeConversation?.insert(message, completionHandler: nil);
     }
 
 
