@@ -13,6 +13,7 @@ import Foundation
 class MessagesViewController: MSMessagesAppViewController {
     
     var currentMessage: MSMessage!
+    var currentStringDecoded = ""
     var currentString = ""
     var active = false
 
@@ -106,7 +107,7 @@ class MessagesViewController: MSMessagesAppViewController {
 
     private func onPause(){
         currentString += " "
-        print(decode())
+        decode()
         updateBubbleMessage()
     }
 
@@ -117,12 +118,12 @@ class MessagesViewController: MSMessagesAppViewController {
         updateBubbleMessage()
     }
 
-    private func decode() -> String {
+    private func decode() {
         let pattern = "\\w*([\\.\\-]+)\\ "
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
         if (matches == []) {
-            return ""
+            return
         }
         var decodedString = ""
         matches.forEach { match in
@@ -132,16 +133,16 @@ class MessagesViewController: MSMessagesAppViewController {
             let textChar = decodeCharacter(morseCode: String(morseChar))
             decodedString += textChar
         }
-        return decodedString
+        currentStringDecoded = decodedString
+        print(currentString + " -> " + currentStringDecoded)
     }
 
     private func updateBubbleMessage(){
         let layout = MSMessageTemplateLayout()
-        layout.caption = currentString
+        layout.caption = currentStringDecoded
         let message = MSMessage()
         message.layout = layout
         activeConversation?.insert(message, completionHandler: nil)
     }
-
-
 }
+
