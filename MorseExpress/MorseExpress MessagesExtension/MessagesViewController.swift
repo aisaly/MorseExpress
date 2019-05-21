@@ -11,9 +11,14 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
+    @IBOutlet weak var dotButton: UIButton!
+    @IBOutlet weak var dashButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        dotButton.layer.cornerRadius = 6
+        dashButton.layer.cornerRadius = 6
+        
     }
     
     // MARK: - Conversation Handling
@@ -64,4 +69,11 @@ class MessagesViewController: MSMessagesAppViewController {
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
 
+    @IBAction func dotHandle(_ sender: Any) {
+        // This will execute on dot press
+    }
+    
+    @IBAction func dashHandle(_ sender: Any) {
+        // This will execute on dash press
+    }
 }
