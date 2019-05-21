@@ -73,20 +73,40 @@ class MessagesViewController: MSMessagesAppViewController {
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
     
-    
-    func onTimeout(){
+    private var idleTimer: Timer?
+    private var timeoutInSeconds = 1.0;
+
+    private func resetIdleTimer() {
+        if let idleTimer = idleTimer {
+            idleTimer.invalidate()
+        }
+
+        idleTimer = Timer.scheduledTimer(
+            timeInterval: timeoutInSeconds,
+            target: self,
+            selector: #selector(MessagesViewController.timeHasExceeded),
+            userInfo: nil,
+            repeats: false
+        )
+    }
+
+    @objc private func timeHasExceeded() {
+        currentString += " "
     }
 
     @IBAction func dotHandle(_ sender: Any) {
-        currentString += ".";
-        print(currentString);
-        onTimeout();
+        send(s: ".");
     }
     
     @IBAction func dashHandle(_ sender: Any) {
-        currentString += "-";
+        send(s: "-");
+    }
+
+
+    private func send(s: String) {
+        currentString += s;
         print(currentString);
-        onTimeout();
+        resetIdleTimer();
     }
 
 
