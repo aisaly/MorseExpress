@@ -70,7 +70,7 @@ var codes = [
 
 
 func morse2emoji(code: String)-> String{
-    return morseMapping[code]!git 
+    return morseMapping[code]!
 }
 
 let emojis = codes.map({ (code) -> String in
