@@ -42,6 +42,8 @@ class PreviewViewController: MSMessagesAppViewController {
     
     @IBAction func shiftHandle(_ sender: Any) {
         MessagesViewController.toggleEmoji()
+        shiftButton.isSelected = !MessagesViewController.isMorse
+        /*
         if (MessagesViewController.isMorse) {
             print("morse time!")
             shiftButton.isSelected = false
@@ -50,11 +52,13 @@ class PreviewViewController: MSMessagesAppViewController {
             print("emoji time!")
             shiftButton.isSelected = true
         }
+ */
     }
     @IBAction func completeHandle(_ sender: Any) {
         PreviewViewController.sendText(text: msgPreview.text!)
         msgPreview.text = ""
         MessagesViewController.messageFactory.cleanup()
+        shiftButton.isSelected = false
     }
     
     

@@ -49,9 +49,9 @@
 
 /* Begin PBXFileReference section */
 		524F065022959D9F006EE11D /* DecodeMorse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DecodeMorse.swift; path = ../MorseExpress/DecodeMorse.swift; sourceTree = "<group>"; };
-		A9172B6F2295E3800088E5B7 /* emojiIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emojiIcon.png; path = "/Users/alexandrai/Documents/MorseExpress/MorseExpress/MorseExpress MessagesExtension/emojiIcon.png"; sourceTree = "<absolute>"; };
-		A9172B702295E3830088E5B7 /* sendIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendIcon.png; path = "/Users/alexandrai/Documents/MorseExpress/MorseExpress/MorseExpress MessagesExtension/sendIcon.png"; sourceTree = "<absolute>"; };
-		A9765C8F2295F7A000E6F86B /* selectedEmoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectedEmoji.png; path = ../../../../Desktop/selectedEmoji.png; sourceTree = "<group>"; };
+		A9172B6F2295E3800088E5B7 /* emojiIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emojiIcon.png; path = "/Users/aeyzechiahv/Documents/2/MorseExpress/MorseExpress/MorseExpress MessagesExtension/emojiIcon.png"; sourceTree = "<absolute>"; };
+		A9172B702295E3830088E5B7 /* sendIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendIcon.png; path = "/Users/aeyzechiahv/Documents/2/MorseExpress/MorseExpress/MorseExpress MessagesExtension/sendIcon.png"; sourceTree = "<absolute>"; };
+		A9765C8F2295F7A000E6F86B /* selectedEmoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectedEmoji.png; path = selectedEmoji.png; sourceTree = "<group>"; };
 		A9765C912295F95600E6F86B /* MessageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFactory.swift; sourceTree = "<group>"; };
 		A9765C932295FF1600E6F86B /* FullViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullViewCell.swift; sourceTree = "<group>"; };
 		A9BB6CEB229440E3002B136C /* MorseExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
