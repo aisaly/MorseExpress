@@ -149,15 +149,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8U-W1-TJL">
                                         <rect key="frame" x="0.0" y="168.5" width="320" height="51"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="fill" text="beep boop" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-CG-iI6">
-                                                <rect key="frame" x="110" y="15" width="100" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="HVi-Up-3M8"/>
-                                                </constraints>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-T4-ePD">
                                                 <rect key="frame" x="20" y="0.5" width="50" height="50"/>
                                                 <constraints>
@@ -165,7 +156,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="xyh-bV-Qg1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" backgroundImage="emojiIcon.png">
+                                                <state key="normal" backgroundImage="sendIcon.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -178,26 +169,33 @@
                                                     <constraint firstAttribute="width" secondItem="cYa-1l-Zu5" secondAttribute="height" multiplier="1:1" id="BsQ-py-Kan"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="qD6-rs-NDD"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="sendIcon.png">
+                                                <state key="normal" backgroundImage="emojiIcon.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="shiftHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="lQr-hL-Zyo"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="beep boop" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-oe-NnB">
+                                                <rect key="frame" x="42.5" y="15" width="235" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="235" id="eIa-86-iZq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="bcD-T4-ePD" firstAttribute="centerY" secondItem="f8U-W1-TJL" secondAttribute="centerY" id="0ed-Hd-jFT"/>
-                                            <constraint firstItem="cYa-1l-Zu5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Nu-CG-iI6" secondAttribute="trailing" constant="20" id="9Rc-bQ-YUy"/>
                                             <constraint firstItem="cYa-1l-Zu5" firstAttribute="height" secondItem="bcD-T4-ePD" secondAttribute="height" id="DZ7-Ko-SR3"/>
                                             <constraint firstItem="cYa-1l-Zu5" firstAttribute="centerY" secondItem="f8U-W1-TJL" secondAttribute="centerY" id="LQy-7q-zKP"/>
-                                            <constraint firstItem="2Nu-CG-iI6" firstAttribute="centerY" secondItem="f8U-W1-TJL" secondAttribute="centerY" id="WT9-mM-Opo"/>
+                                            <constraint firstItem="Ob0-oe-NnB" firstAttribute="centerX" secondItem="f8U-W1-TJL" secondAttribute="centerX" id="MZr-SR-VAv"/>
                                             <constraint firstAttribute="bottom" secondItem="bcD-T4-ePD" secondAttribute="bottom" constant="0.5" id="WyD-4L-AMH"/>
+                                            <constraint firstItem="Ob0-oe-NnB" firstAttribute="centerX" secondItem="f8U-W1-TJL" secondAttribute="centerX" id="cMu-pY-UCC"/>
                                             <constraint firstItem="bcD-T4-ePD" firstAttribute="top" secondItem="f8U-W1-TJL" secondAttribute="top" constant="0.5" id="gVf-tb-SdL"/>
-                                            <constraint firstItem="2Nu-CG-iI6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bcD-T4-ePD" secondAttribute="trailing" constant="20" id="jMb-zN-XYX"/>
                                             <constraint firstAttribute="width" secondItem="f8U-W1-TJL" secondAttribute="height" multiplier="320:51" id="jgQ-mR-lS3"/>
-                                            <constraint firstItem="2Nu-CG-iI6" firstAttribute="centerX" secondItem="f8U-W1-TJL" secondAttribute="centerX" id="jzr-re-mH6"/>
                                             <constraint firstAttribute="trailing" secondItem="cYa-1l-Zu5" secondAttribute="trailing" constant="20" id="tTY-No-2KU"/>
                                             <constraint firstItem="bcD-T4-ePD" firstAttribute="leading" secondItem="f8U-W1-TJL" secondAttribute="leading" constant="20" id="tt8-st-ikQ"/>
                                         </constraints>
@@ -234,6 +232,7 @@
                         <outlet property="CompleteButton" destination="cYa-1l-Zu5" id="BEP-gK-shm"/>
                         <outlet property="dashButton" destination="gJh-Ct-kXY" id="qxX-bP-rkq"/>
                         <outlet property="dotButton" destination="0RO-7m-HeJ" id="6Jn-WZ-7Mn"/>
+                        <outlet property="msgPreview" destination="Ob0-oe-NnB" id="41u-Bi-8Ey"/>
                         <outlet property="shiftButton" destination="bcD-T4-ePD" id="Ylh-8Z-LZL"/>
                     </connections>
                 </viewController>

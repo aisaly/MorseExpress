@@ -68,13 +68,8 @@ class PreviewViewController: MSMessagesAppViewController {
     }
     
     
-    //add a send button here and
-        //call sendMessage from MessageViewController!
-        //reset timeout
-        //reset strings (call cleanup)
+    @IBOutlet weak var msgPreview: UILabel!
     
-    
-    //add a "shift" button here, will toggle emojis or text
     
     
     
@@ -123,6 +118,7 @@ class PreviewViewController: MSMessagesAppViewController {
         //print("tobedecoded " + toBeDecoded)
         currentStringDecoded += decode(morseCode: toBeDecoded)
         print(currentStringDecoded)
+        msgPreview.text = currentStringDecoded
     }
     
     private func decode(morseCode: String) -> String {
@@ -133,7 +129,7 @@ class PreviewViewController: MSMessagesAppViewController {
             return ""
         }
         var char = ""
-        print(toBeDecoded + " to be decoded")
+        //print(toBeDecoded + " to be decoded")
         matches.forEach { match in
             let range = match.range(at:1)
             let swiftRange = Range(range, in: currentString)
@@ -159,6 +155,8 @@ class PreviewViewController: MSMessagesAppViewController {
     func cleanup(){
         currentString = ""
         currentStringDecoded = ""
+        morseORemoji = true
+        msgPreview.text = "..."
     }
     
     
