@@ -22,16 +22,15 @@
 import UIKit
 import Messages
 import Foundation
+import NotificationCenter
 
 class PreviewViewController: MSMessagesAppViewController {
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dotButton.layer.cornerRadius = 6
         dashButton.layer.cornerRadius = 6
     }
-    
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ button inputs ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
@@ -47,29 +46,24 @@ class PreviewViewController: MSMessagesAppViewController {
     }
     @IBAction func completeHandle(_ sender: Any) {
         print("send it")
-        
-        
-        
-        
-        cleanup()
     }
+    
+    private var nc: NotificationCenter = NotificationCenter.default
     
     
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
     
     @IBAction func dotHandle(_ sender: Any) {
-        insertText(text: ".")
-        resetIdleTimer()
+        MessagesViewController.sendDot()
     }
+    
     @IBAction func dashHandle(_ sender: Any) {
-        insertText(text: "-")
-        resetIdleTimer()
+        MessagesViewController.sendDash()
     }
     
     
     @IBOutlet weak var msgPreview: UILabel!
-    
     
     
     
@@ -158,6 +152,5 @@ class PreviewViewController: MSMessagesAppViewController {
         morseORemoji = true
         msgPreview.text = "..."
     }
-    
     
 }
