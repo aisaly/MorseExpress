@@ -94,8 +94,6 @@ var emojiDict = [
     "---.-":"👏",
     "----.":"🖕",
     "-----":"👀",
-    "":"",
-    " ":" "
 ]
 
 func morse2emoji(code: String)-> String{
