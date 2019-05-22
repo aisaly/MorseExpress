@@ -54,6 +54,7 @@ class PreviewViewController: MSMessagesAppViewController {
     @IBAction func completeHandle(_ sender: Any) {
         PreviewViewController.sendText(text: msgPreview.text!)
         msgPreview.text = ""
+        MessagesViewController.messageFactory.cleanup()
     }
     
     
