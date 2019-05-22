@@ -157,7 +157,7 @@ class PreviewViewController: MSMessagesAppViewController {
     func cleanup(){
         currentString = ""
         currentStringDecoded = ""
-        morseORemoji = true
+        isMorse = true
         msgPreview.text = "..."
     }
 
