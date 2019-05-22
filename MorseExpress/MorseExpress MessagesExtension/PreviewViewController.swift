@@ -51,7 +51,8 @@ class PreviewViewController: MSMessagesAppViewController {
         }
     }
     @IBAction func completeHandle(_ sender: Any) {
-        print("send it")
+        MessagesViewController.sendText(text: msgPreview.text!)
+        msgPreview.text = ""
     }
     
     
@@ -62,7 +63,6 @@ class PreviewViewController: MSMessagesAppViewController {
     @IBAction func dotHandle(_ sender: Any) {
         MessagesViewController.sendDot()
         msgPreview.text = MessagesViewController.getText()
-
     }
     
     @IBAction func dashHandle(_ sender: Any) {

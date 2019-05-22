@@ -104,11 +104,11 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     static func sendDot() {
-        messageFactory.onDot()
+        messageFactory.onDot(isMorse: isMorse)
         resetIdleTimer()
     }
     static func sendDash() {
-        messageFactory.onDash()
+        messageFactory.onDash(isMorse: isMorse)
         resetIdleTimer()
     }
     static var idleTimer: Timer?
@@ -129,6 +129,14 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     static func getText() -> String{
         return messageFactory.getText()
+    }
+    
+    static func sendText(text: String) {
+        let message = MSMessage()
+        let layout = MSMessageTemplateLayout()
+        layout.caption = text
+        message.layout = layout
+        MessagesViewController.singleton?.activeConversation?.insert(message)
     }
     
     @objc static func timeHasExceeded() {

@@ -8,12 +8,24 @@
 
 import UIKit
 
-class FullViewController: UIViewController {
+class FullViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return emojiDict.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FullViewCell
+        
+        cell.emojiLabel.text = Array(emojiDict.keys)[indexPath.item]
+        
+        cell.morseLabel.text = Array(emojiDict.values)[indexPath.item]
+        
+        return cell
+    }
+    
     
     private var nc: NotificationCenter = NotificationCenter.default
-
-    @IBOutlet weak var dotButton: UIButton!
-    @IBOutlet weak var dashButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +41,4 @@ class FullViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func dotHandle(_ sender: Any) {
-        MessagesViewController.sendDot()
-    }
-    
-    @IBAction func dashHandle(_ sender: Any) {
-        MessagesViewController.sendDash()
-    }
 }
