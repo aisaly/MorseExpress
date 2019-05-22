@@ -9,6 +9,8 @@
 import UIKit
 
 class FullViewController: UIViewController {
+    
+    private var nc: NotificationCenter = NotificationCenter.default
 
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
@@ -30,8 +32,10 @@ class FullViewController: UIViewController {
     }
     */
     @IBAction func dotHandle(_ sender: Any) {
+        MessagesViewController.sendDot()
     }
     
     @IBAction func dashHandle(_ sender: Any) {
+        MessagesViewController.sendDash()
     }
 }
