@@ -29,6 +29,7 @@ class PreviewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
     @IBAction func dotHandle(_ sender: Any) {
     }
     @IBAction func dashHandle(_ sender: Any) {
