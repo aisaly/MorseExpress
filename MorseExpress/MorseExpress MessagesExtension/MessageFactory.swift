@@ -12,43 +12,20 @@ import Messages
 
 class MessageFactory {
     
-    var viewController: MSMessagesAppViewController
-    
-    init(controller: MSMessagesAppViewController){
-        self.viewController = controller
-    }
-
     private var currentString: String = ""
     private var timeoutInSeconds: Double = 1.0
     private var currentMessage: MSMessage = MSMessage()
-
-    private var idleTimer: Timer?
-    private func resetIdleTimer() {
-        if let idleTimer = idleTimer {
-            idleTimer.invalidate()
-        }
-        
-        idleTimer = Timer.scheduledTimer(
-            timeInterval: timeoutInSeconds,
-            target: self,
-            selector: #selector(timeHasExceeded),
-            userInfo: nil,
-            repeats: false
-        )
-    }
 
     @objc private func timeHasExceeded() {
         onPause()
     }
 
-    func insertDot(){
+    func onDot(){
         insertText(text: ".")
-        resetIdleTimer()
     }
 
-    func insertDash(){
+    func onDash(){
         insertText(text: "-")
-        resetIdleTimer()
     }
 
     // Logic for message creation
@@ -60,7 +37,7 @@ class MessageFactory {
     private func insertText(text: String) {
         print(currentString)
         currentString += text
-        updateBubbleMessage()
+        //updateBubbleMessage()
     }
 
     private func updateBubbleMessage(){
@@ -69,8 +46,15 @@ class MessageFactory {
         layout.caption = decodedString
         currentMessage = MSMessage()
         currentMessage.layout = layout
-        self.viewController.activeConversation?.insert(currentMessage, completionHandler: nil)
     }
+    
+    func getMessage() -> MSMessage {
+        //currentString = decode(morseCode: currentString)
+        onPause()
+        updateBubbleMessage()
+        return self.currentMessage
+    }
+    
 
     private func decode(morseCode: String) -> String {
         let pattern = "\\w*([\\.\\-]+)\\ "
@@ -89,6 +73,10 @@ class MessageFactory {
         }
         print(currentString + " -> " + decodedString)
         return decodedString
+    }
+    
+    func cleanup(){
+        currentString = ""
     }
 }
 

@@ -12,8 +12,8 @@ import Foundation
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    private var currentString: String = ""
-    private var timeoutInSeconds: Double = 1.0
+    private var messageFactory: MessageFactory = MessageFactory()
+    private var setupQuestionMark: Bool = false
 
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
@@ -53,7 +53,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         // Called when the user taps the send button.
-        currentString = ""
+        messageFactory.cleanup()
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -73,75 +73,38 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
+
+    
+    // Logic for using message Factory
+    @IBAction func dotHandle(_ sender: Any) {
+        messageFactory.onDot()
+        resetIdleTimer()
+    }
+    
+    @IBAction func dashHandle(_ sender: Any) {
+        messageFactory.onDash()
+        resetIdleTimer()
+    }
     
     private var idleTimer: Timer?
     private func resetIdleTimer() {
         if let idleTimer = idleTimer {
             idleTimer.invalidate()
         }
-
+        
         idleTimer = Timer.scheduledTimer(
-            timeInterval: timeoutInSeconds,
+            timeInterval: 1.0,
             target: self,
-            selector: #selector(MessagesViewController.timeHasExceeded),
+            selector: #selector(timeHasExceeded),
             userInfo: nil,
             repeats: false
         )
     }
-
-    @objc private func timeHasExceeded() {
-        onPause()
-    }
-
-    @IBAction func dotHandle(_ sender: Any) {
-        insertText(text: ".")
-        resetIdleTimer()
+    
+    @objc func timeHasExceeded(){
+        activeConversation?.insert(messageFactory.getMessage())
     }
     
-    @IBAction func dashHandle(_ sender: Any) {
-        insertText(text: "-")
-        resetIdleTimer()
-    }
-
-    // Logic for message creation
     
-    private func onPause() {
-        currentString += " "
-        updateBubbleMessage()
-    }
-
-    private func insertText(text: String) {
-        print(currentString)
-        currentString += text
-        updateBubbleMessage()
-    }
-    
-    private func updateBubbleMessage(){
-        let decodedString = decode(morseCode: currentString)
-        let layout = MSMessageTemplateLayout()
-        layout.caption = decodedString
-        let message = MSMessage()
-        message.layout = layout
-        activeConversation?.insert(message, completionHandler: nil)
-    }
-
-    private func decode(morseCode: String) -> String {
-        let pattern = "\\w*([\\.\\-]+)\\ "
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
-        if (matches == []) {
-            return ""
-        }
-        var decodedString = ""
-        matches.forEach { match in
-            let range = match.range(at:1)
-            let swiftRange = Range(range, in: currentString)
-            let morseChar = currentString[swiftRange!]
-            let textChar = decodeCharacter(morseCode: String(morseChar))
-            decodedString += textChar
-        }
-        print(currentString + " -> " + decodedString)
-        return decodedString
-    }
 }
 
