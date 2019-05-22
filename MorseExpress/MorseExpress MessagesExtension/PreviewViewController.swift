@@ -30,6 +30,8 @@ class PreviewViewController: MSMessagesAppViewController {
         super.viewDidLoad()
         dotButton.layer.cornerRadius = 6
         dashButton.layer.cornerRadius = 6
+        shiftButton.setImage(UIImage(named : "emojiIcon"), for: UIControl.State.normal)
+        shiftButton.setImage(UIImage(named : "selectedEmoji"), for: UIControl.State.selected)
     }
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ button inputs ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,12 +39,19 @@ class PreviewViewController: MSMessagesAppViewController {
     @IBOutlet weak var shiftButton: UIButton!
     @IBOutlet weak var CompleteButton: UIButton!
     
-    var morseORemoji = true
+    var isMorse = true
     
     
     @IBAction func shiftHandle(_ sender: Any) {
-        morseORemoji = !morseORemoji
-        print("emoji time!")
+        isMorse = !isMorse
+        if (isMorse) {
+            print("morse time!")
+            shiftButton.isSelected = false
+        }
+        else {
+            print("emoji time!")
+            shiftButton.isSelected = true
+        }
     }
     @IBAction func completeHandle(_ sender: Any) {
         print("send it")
@@ -127,7 +136,7 @@ class PreviewViewController: MSMessagesAppViewController {
             let range = match.range(at:1)
             let swiftRange = Range(range, in: currentString)
             let morseChar = currentString[swiftRange!]
-            char = morseORemoji ?
+            char = isMorse ?
                  decodeCharacter(morseCode:String(morseChar) ) //if u want morse to text
             :
                 morse2emoji(code: String(morseChar)) //if u want morse to emojis

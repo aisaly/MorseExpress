@@ -124,7 +124,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gJh-Ct-kXY" secondAttribute="height" multiplier="1:1" id="bWL-Pl-Kv8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -138,7 +138,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0RO-7m-HeJ" secondAttribute="height" multiplier="1:1" id="eva-56-1Zn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <state key="normal" title="•">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -160,7 +160,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="completeHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="zi4-CP-8gM"/>
+                                                    <action selector="shiftHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="Vix-Td-ycs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYa-1l-Zu5">
@@ -173,7 +173,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="shiftHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="lQr-hL-Zyo"/>
+                                                    <action selector="completeHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="ajA-6Q-j06"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="beep boop" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-oe-NnB">
