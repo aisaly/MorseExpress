@@ -66,7 +66,6 @@ class PreviewViewController: MSMessagesAppViewController {
     @IBOutlet weak var msgPreview: UILabel!
     
     
-    
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ timer handling ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     private var idleTimer: Timer?
     private var timeoutInSeconds: Double = 1.0
@@ -152,5 +151,5 @@ class PreviewViewController: MSMessagesAppViewController {
         morseORemoji = true
         msgPreview.text = "..."
     }
-    
+
 }
