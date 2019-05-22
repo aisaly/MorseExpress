@@ -14,6 +14,7 @@ protocol ViewControllerDelegate: AnyObject {
 
 
 class MessagesViewController: MSMessagesAppViewController {
+    static var isMorse: Bool = true
     static var singleton: MessagesViewController?
     weak var delegate: ViewControllerDelegate?
     static var messageFactory: MessageFactory = MessageFactory()
@@ -23,6 +24,9 @@ class MessagesViewController: MSMessagesAppViewController {
         MessagesViewController.singleton = self
     }
     
+    static func toggleEmoji() {
+        MessagesViewController.isMorse = !MessagesViewController.isMorse
+    }
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
@@ -123,10 +127,13 @@ class MessagesViewController: MSMessagesAppViewController {
             repeats: false
         )
     }
+    static func getText() -> String{
+        return messageFactory.getText()
+    }
     
     @objc static func timeHasExceeded() {
         messageFactory.onPause() // when timeout has happened, reflect that in the text
-        MessagesViewController.singleton?.activeConversation?.insert(messageFactory.getMessage())
+        //MessagesViewController.singleton?.activeConversation?.insert(messageFactory.getMessage(isMorse: MessagesViewController.isMorse))
     }
 
 }

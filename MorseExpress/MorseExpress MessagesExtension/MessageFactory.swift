@@ -40,21 +40,21 @@ class MessageFactory {
         //updateBubbleMessage()
     }
 
-    private func updateBubbleMessage(){
-        let decodedString = decode(morseCode: currentString)
+    private func updateBubbleMessage(isMorse: Bool){
+        let decodedString = decode(morseCode: currentString, isMorse: isMorse)
         let layout = MSMessageTemplateLayout()
         layout.caption = decodedString
         currentMessage = MSMessage()
         currentMessage.layout = layout
     }
     
-    func getMessage() -> MSMessage {
-        updateBubbleMessage()
+    func getMessage(isMorse: Bool) -> MSMessage {
+        updateBubbleMessage(isMorse: isMorse)
         return self.currentMessage
     }
     
 
-    private func decode(morseCode: String) -> String {
+    private func decode(morseCode: String, isMorse: Bool) -> String {
         let pattern = "\\w*([\\.\\-]+)\\ "
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
@@ -62,19 +62,28 @@ class MessageFactory {
             return ""
         }
         var decodedString = ""
+        var textChar: String = ""
         matches.forEach { match in
             let range = match.range(at:1)
             let swiftRange = Range(range, in: currentString)
             let morseChar = currentString[swiftRange!]
-            let textChar = decodeCharacter(morseCode: String(morseChar))
+            textChar = isMorse ?
+                decodeCharacter(morseCode: String(morseChar))
+                : morse2emoji(code: String(morseChar))
             decodedString += textChar
         }
         print(currentString + " -> " + decodedString)
-        return decodedString
+        return textChar
     }
     
     func cleanup(){
         currentString = ""
+    }
+    
+    func getText() -> String {
+        getMessage(isMorse: true)
+        //TODO turn . .- - into eat
+        return self.currentString
     }
 }
 
