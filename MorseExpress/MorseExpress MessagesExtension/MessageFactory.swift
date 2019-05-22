@@ -85,6 +85,7 @@ class MessageFactory {
     func cleanup(){
         currentString = ""
         buffer = ""
+        MessagesViewController.isMorse = true
     }
     
     func getText() -> String {
