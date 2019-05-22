@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		524F065122959D9F006EE11D /* DecodeMorse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F065022959D9F006EE11D /* DecodeMorse.swift */; };
+		A90F20AD2295D39900348F76 /* emojiicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A90F20AC2295D39900348F76 /* emojiicon.png */; };
+		A90F20B32295D78100348F76 /* sendicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A90F20B22295D78100348F76 /* sendicon.png */; };
 		A9BB6CEF229440E4002B136C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6CEE229440E4002B136C /* Assets.xcassets */; };
 		A9BB6CF6229440E4002B136C /* MorseExpress MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9BB6CFB229440E4002B136C /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BB6CFA229440E4002B136C /* Messages.framework */; };
@@ -43,9 +45,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A90F20AA2295BE6B00348F76 /* emojiIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = emojiIcon.jpg; sourceTree = "<group>"; };
-		A90F20AB2295BE6D00348F76 /* paper-plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-plane.png"; sourceTree = "<group>"; };
 		524F065022959D9F006EE11D /* DecodeMorse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DecodeMorse.swift; path = ../MorseExpress/DecodeMorse.swift; sourceTree = "<group>"; };
+		A90F20AC2295D39900348F76 /* emojiicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emojiicon.png; path = ../../../../../Pictures/emojiicon.png; sourceTree = "<group>"; };
+		A90F20B22295D78100348F76 /* sendicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendicon.png; path = ../../../../../Pictures/sendicon.png; sourceTree = "<group>"; };
 		A9BB6CEB229440E3002B136C /* MorseExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB6CEE229440E4002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BB6CF0229440E4002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,8 +76,8 @@
 		A90F20A92295BE4E00348F76 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A90F20AB2295BE6D00348F76 /* paper-plane.png */,
-				A90F20AA2295BE6B00348F76 /* emojiIcon.jpg */,
+				A90F20AC2295D39900348F76 /* emojiicon.png */,
+				A90F20B22295D78100348F76 /* sendicon.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -220,6 +222,8 @@
 			files = (
 				A9BB6D03229440E5002B136C /* Assets.xcassets in Resources */,
 				A9BB6D01229440E4002B136C /* MainInterface.storyboard in Resources */,
+				A90F20B32295D78100348F76 /* sendicon.png in Resources */,
+				A90F20AD2295D39900348F76 /* emojiicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

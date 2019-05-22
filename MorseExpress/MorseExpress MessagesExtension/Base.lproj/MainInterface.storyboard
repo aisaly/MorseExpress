@@ -133,36 +133,38 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8U-W1-TJL">
-                                        <rect key="frame" x="0.0" y="166" width="320" height="51"/>
+                                        <rect key="frame" x="0.0" y="168.5" width="320" height="51"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-CG-iI6">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="fill" text="beep boop" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-CG-iI6">
                                                 <rect key="frame" x="110" y="10.5" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="HVi-Up-3M8"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYa-1l-Zu5">
-                                                <rect key="frame" x="274" y="10.5" width="36" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-T4-ePD">
+                                                <rect key="frame" x="20" y="0.5" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="qD6-rs-NDD"/>
+                                                    <constraint firstAttribute="width" secondItem="bcD-T4-ePD" secondAttribute="height" multiplier="1:1" id="SKW-cp-Prp"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="xyh-bV-Qg1"/>
                                                 </constraints>
-                                                <state key="normal" title="Send">
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" backgroundImage="emojiicon.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="completeHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="zi4-CP-8gM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-T4-ePD">
-                                                <rect key="frame" x="10" y="10.5" width="38" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYa-1l-Zu5">
+                                                <rect key="frame" x="250" y="0.5" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="xyh-bV-Qg1"/>
+                                                    <constraint firstAttribute="width" secondItem="cYa-1l-Zu5" secondAttribute="height" multiplier="1:1" id="BsQ-py-Kan"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="qD6-rs-NDD"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Emoji">
+                                                <state key="normal" backgroundImage="sendicon.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -173,20 +175,21 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="bcD-T4-ePD" firstAttribute="centerY" secondItem="f8U-W1-TJL" secondAttribute="centerY" id="0ed-Hd-jFT"/>
-                                            <constraint firstItem="cYa-1l-Zu5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Nu-CG-iI6" secondAttribute="trailing" constant="30" id="9Rc-bQ-YUy"/>
+                                            <constraint firstItem="cYa-1l-Zu5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Nu-CG-iI6" secondAttribute="trailing" constant="20" id="9Rc-bQ-YUy"/>
                                             <constraint firstItem="cYa-1l-Zu5" firstAttribute="height" secondItem="bcD-T4-ePD" secondAttribute="height" id="DZ7-Ko-SR3"/>
                                             <constraint firstItem="cYa-1l-Zu5" firstAttribute="centerY" secondItem="f8U-W1-TJL" secondAttribute="centerY" id="LQy-7q-zKP"/>
                                             <constraint firstItem="2Nu-CG-iI6" firstAttribute="centerY" secondItem="f8U-W1-TJL" secondAttribute="centerY" id="WT9-mM-Opo"/>
-                                            <constraint firstItem="2Nu-CG-iI6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bcD-T4-ePD" secondAttribute="trailing" constant="30" id="jMb-zN-XYX"/>
+                                            <constraint firstAttribute="bottom" secondItem="bcD-T4-ePD" secondAttribute="bottom" constant="0.5" id="WyD-4L-AMH"/>
+                                            <constraint firstItem="bcD-T4-ePD" firstAttribute="top" secondItem="f8U-W1-TJL" secondAttribute="top" constant="0.5" id="gVf-tb-SdL"/>
+                                            <constraint firstItem="2Nu-CG-iI6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bcD-T4-ePD" secondAttribute="trailing" constant="20" id="jMb-zN-XYX"/>
                                             <constraint firstAttribute="width" secondItem="f8U-W1-TJL" secondAttribute="height" multiplier="320:51" id="jgQ-mR-lS3"/>
                                             <constraint firstItem="2Nu-CG-iI6" firstAttribute="centerX" secondItem="f8U-W1-TJL" secondAttribute="centerX" id="jzr-re-mH6"/>
-                                            <constraint firstAttribute="trailing" secondItem="cYa-1l-Zu5" secondAttribute="trailing" constant="10" id="tTY-No-2KU"/>
-                                            <constraint firstItem="bcD-T4-ePD" firstAttribute="leading" secondItem="f8U-W1-TJL" secondAttribute="leading" constant="10" id="tt8-st-ikQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="cYa-1l-Zu5" secondAttribute="trailing" constant="20" id="tTY-No-2KU"/>
+                                            <constraint firstItem="bcD-T4-ePD" firstAttribute="leading" secondItem="f8U-W1-TJL" secondAttribute="leading" constant="20" id="tt8-st-ikQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="f8U-W1-TJL" secondAttribute="bottom" constant="5" id="1LR-QR-rLL"/>
                                     <constraint firstItem="gJh-Ct-kXY" firstAttribute="height" secondItem="0RO-7m-HeJ" secondAttribute="height" id="3td-vx-Ncf"/>
                                     <constraint firstItem="f8U-W1-TJL" firstAttribute="centerX" secondItem="zYX-Bp-Lwp" secondAttribute="centerX" id="AeT-RQ-0Ng"/>
                                     <constraint firstAttribute="trailing" secondItem="gJh-Ct-kXY" secondAttribute="trailing" constant="10" id="GxO-WM-jnF"/>
@@ -196,6 +199,7 @@
                                     <constraint firstItem="0RO-7m-HeJ" firstAttribute="centerY" secondItem="zYX-Bp-Lwp" secondAttribute="centerY" constant="-25" id="gPZ-pu-phU"/>
                                     <constraint firstItem="gJh-Ct-kXY" firstAttribute="leading" secondItem="0RO-7m-HeJ" secondAttribute="trailing" constant="10" id="gn6-Kd-TZT"/>
                                     <constraint firstItem="f8U-W1-TJL" firstAttribute="width" secondItem="zYX-Bp-Lwp" secondAttribute="width" id="mpC-x0-2UA"/>
+                                    <constraint firstItem="f8U-W1-TJL" firstAttribute="top" secondItem="gJh-Ct-kXY" secondAttribute="bottom" constant="10" id="rf8-gy-aw2"/>
                                     <constraint firstItem="gJh-Ct-kXY" firstAttribute="centerY" secondItem="0RO-7m-HeJ" secondAttribute="centerY" id="tgB-nq-fMO"/>
                                     <constraint firstItem="0RO-7m-HeJ" firstAttribute="leading" secondItem="zYX-Bp-Lwp" secondAttribute="leading" constant="10" id="xfd-Te-g82"/>
                                 </constraints>
@@ -224,4 +228,8 @@
             <point key="canvasLocation" x="805.79710144927537" y="239.73214285714283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="emojiicon.png" width="122.87999725341797" height="122.87999725341797"/>
+        <image name="sendicon.png" width="48" height="48"/>
+    </resources>
 </document>
