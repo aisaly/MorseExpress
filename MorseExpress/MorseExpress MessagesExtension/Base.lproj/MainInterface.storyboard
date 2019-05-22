@@ -187,13 +187,13 @@
                                                     <action selector="completeHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="ajA-6Q-j06"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="beep boop" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-oe-NnB">
-                                                <rect key="frame" x="110" y="15" width="100" height="21.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-oe-NnB">
+                                                <rect key="frame" x="37.5" y="25.5" width="245" height="0.0"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="eIa-86-iZq"/>
+                                                    <constraint firstAttribute="width" constant="245" id="Mzm-0t-NRp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
