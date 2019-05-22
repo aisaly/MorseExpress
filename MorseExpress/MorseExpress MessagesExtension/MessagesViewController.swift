@@ -9,24 +9,19 @@
 import UIKit
 import Messages
 
+protocol ViewControllerDelegate: AnyObject {
+}
+
+
 class MessagesViewController: MSMessagesAppViewController {
+    static var singleton: MessagesViewController?
+    weak var delegate: ViewControllerDelegate?
+    static var messageFactory: MessageFactory = MessageFactory()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MessagesViewController.singleton = self
     }
-    
-    
-    func sendBubbleMessage(finalDecodedMessage: String){
-        let layout = MSMessageTemplateLayout()
-        layout.caption = finalDecodedMessage
-        
-        let currentMessage = MSMessage() //current object message to be sent
-        currentMessage.layout = layout
-        
-        activeConversation?.insert(currentMessage, completionHandler: nil)
-    }
-    
-    
     
     // MARK: - Conversation Handling
     
@@ -56,6 +51,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         // Called when the user taps the send button.
+        MessagesViewController.messageFactory.cleanup()
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -101,6 +97,36 @@ class MessagesViewController: MSMessagesAppViewController {
             child.view.removeFromSuperview()
             child.removeFromParent()
         }
+    }
+    
+    static func sendDot() {
+        messageFactory.onDot()
+        resetIdleTimer()
+    }
+    static func sendDash() {
+        messageFactory.onDash()
+        resetIdleTimer()
+    }
+    static var idleTimer: Timer?
+    static var timeoutInSeconds: Double = 1.0
+    
+    static func resetIdleTimer() {
+        if let idleTimer = idleTimer {
+            idleTimer.invalidate()
+        }
+        
+        idleTimer = Timer.scheduledTimer(
+            timeInterval: timeoutInSeconds,
+            target: self,
+            selector: #selector(timeHasExceeded),
+            userInfo: nil,
+            repeats: false
+        )
+    }
+    
+    @objc static func timeHasExceeded() {
+        messageFactory.onPause() // when timeout has happened, reflect that in the text
+        MessagesViewController.singleton?.activeConversation?.insert(messageFactory.getMessage())
     }
 
 }
