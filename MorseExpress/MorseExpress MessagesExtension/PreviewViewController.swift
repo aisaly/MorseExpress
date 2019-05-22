@@ -6,63 +6,26 @@
 //  Copyright © 2019 Alexandra Isaly. All rights reserved.
 //
 
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+
+
 import UIKit
 import Messages
 import Foundation
 
 class PreviewViewController: MSMessagesAppViewController {
-
-    var standardMorseDict = [
-        ".-":       "a",
-        "-...":     "b",
-        "-.-.":     "c",
-        "-..":      "d",
-        ".":        "e",
-        "..-.":     "f",
-        "--.":      "g",
-        "....":     "h",
-        "..":       "i",
-        ".---":     "j",
-        "-.-":      "k",
-        ".-..":     "l",
-        "--":       "m",
-        "-.":       "n",
-        "---":      "o",
-        ".--.":     "p",
-        "--.-":     "q",
-        ".-.":      "r",
-        "...":      "s",
-        "-":        "t",
-        "..-":      "u",
-        "...-":     "v",
-        ".--":      "w",
-        "-..-":     "x",
-        "-.--":     "y",
-        "--..":     "z",
-        "-----":    "0",
-        ".----":    "1",
-        "..---":    "2",
-        "...--":    "3",
-        "....-":    "4",
-        ".....":    "5",
-        "-....":    "6",
-        "--...":    "7",
-        "---..":    "8",
-        "----.":    "9",
-    ]
     
-    func decodeCharacter(morseCode: String) -> String {
-        return standardMorseDict[morseCode]!
-    }
-   
     
-    var currentMessage: MSMessage!
-    var currentStringDecoded = ""
-    var currentString = ""
-    var active = false
-    
-    @IBOutlet weak var dotButton: UIButton!
-    @IBOutlet weak var dashButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,19 +33,27 @@ class PreviewViewController: MSMessagesAppViewController {
         dashButton.layer.cornerRadius = 6
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~ button inputs ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    @IBOutlet weak var dotButton: UIButton!
+    @IBOutlet weak var dashButton: UIButton!
+    
+    @IBAction func dotHandle(_ sender: Any) {
+        insertText(text: ".")
+        resetIdleTimer()
+    }
+    @IBAction func dashHandle(_ sender: Any) {
+        insertText(text: "-")
+        resetIdleTimer()
+    }
+    
+    
+    
+    
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~ timer handling ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     private var idleTimer: Timer?
-    private var timeoutInSeconds = 1.0
+    private var timeoutInSeconds: Double = 1.0
     
     private func resetIdleTimer() {
         if let idleTimer = idleTimer {
@@ -98,25 +69,48 @@ class PreviewViewController: MSMessagesAppViewController {
         )
     }
     
-    private func onPause(){
-        currentString += " "
-        decode()
-        updateBubbleMessage()
+    @objc private func timeHasExceeded() {
+        onPause() // when timeout has happened, reflect that in the text
+        activeConversation?.insert(self.getMessage())
     }
+    
+    
+    
+    
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~ textual input handling ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    private var currentMessage: MSMessage = MSMessage()
+    var currentStringDecoded = "" //current readable string (morse2this)
+    var currentString = "" //current morse string
+    var active = false
+    
+    
+    
+    func getMessage() -> MSMessage {
+        updateBubbleMessage()
+        return self.currentMessage
+    }
+    
     
     private func insertText(text: String) {
         currentString += text
-        print(currentString)
-        resetIdleTimer()
         updateBubbleMessage()
     }
     
-    private func decode() {
+    private func updateBubbleMessage() //called everytime youre adding new characters
+    {
+        currentStringDecoded = decode(morseCode: currentString) //should only return one character
+        //        let layout = MSMessageTemplateLayout() //not working rn
+        //        layout.caption = decodedString         //ditto
+        //        currentMessage = MSMessage()
+        //        currentMessage.layout = layout
+    }
+    
+    private func decode(morseCode: String) -> String {
         let pattern = "\\w*([\\.\\-]+)\\ "
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
         if (matches == []) {
-            return
+            return ""
         }
         var decodedString = ""
         matches.forEach { match in
@@ -126,31 +120,19 @@ class PreviewViewController: MSMessagesAppViewController {
             let textChar = decodeCharacter(morseCode: String(morseChar))
             decodedString += textChar
         }
-        currentStringDecoded = decodedString
-        print(currentString + " -> " + currentStringDecoded)
-    }
-    
-    private func updateBubbleMessage(){
-        let layout = MSMessageTemplateLayout()
-        layout.caption = currentStringDecoded
-        let message = MSMessage()
-        message.layout = layout
-        activeConversation?.insert(message, completionHandler: nil)
+        print(currentString + " > " + decodedString)
+        return decodedString
     }
     
     
-    
-    @objc private func timeHasExceeded() {
-        onPause()
+    private func onPause(){
+        currentString += " "
+        updateBubbleMessage()
     }
     
+    func cleanup(){
+        currentString = ""
+    }
     
-
-    @IBAction func dotHandle(_ sender: Any) {
-        insertText(text: ".")
-    }
-    @IBAction func dashHandle(_ sender: Any) {
-        insertText(text: "-")
-    }
     
 }
