@@ -42,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A90F20AA2295BE6B00348F76 /* emojiIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = emojiIcon.jpg; sourceTree = "<group>"; };
+		A90F20AB2295BE6D00348F76 /* paper-plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-plane.png"; sourceTree = "<group>"; };
 		A9BB6CEB229440E3002B136C /* MorseExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB6CEE229440E4002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BB6CF0229440E4002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90F20A92295BE4E00348F76 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A90F20AB2295BE6D00348F76 /* paper-plane.png */,
+				A90F20AA2295BE6B00348F76 /* emojiIcon.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		A9BB6CE4229440E3002B136C = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +117,7 @@
 		A9BB6CFC229440E4002B136C /* MorseExpress MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				A90F20A92295BE4E00348F76 /* Images */,
 				A9BB6CFD229440E4002B136C /* MessagesViewController.swift */,
 				A9BB6CFF229440E4002B136C /* MainInterface.storyboard */,
 				A9BB6D02229440E5002B136C /* Assets.xcassets */,
