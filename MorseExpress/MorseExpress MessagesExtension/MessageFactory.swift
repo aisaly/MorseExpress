@@ -12,6 +12,7 @@ import Messages
 
 class MessageFactory {
     
+    private var buffer: String = ""
     private var currentString: String = ""
     private var timeoutInSeconds: Double = 1.0
     private var currentMessage: MSMessage = MSMessage()
@@ -20,12 +21,12 @@ class MessageFactory {
         onPause()
     }
 
-    func onDot(){
-        insertText(text: ".")
+    func onDot(isMorse: Bool){
+        insertText(text: ".", isMorse: isMorse)
     }
 
-    func onDash(){
-        insertText(text: "-")
+    func onDash(isMorse: Bool){
+        insertText(text: "-", isMorse: isMorse)
     }
 
     // Logic for message creation
@@ -34,12 +35,12 @@ class MessageFactory {
         currentString += " "
     }
 
-    private func insertText(text: String) {
-        print(currentString)
-        currentString += text
-        //updateBubbleMessage()
+    private func insertText(text: String, isMorse: Bool) {
+        //print(currentString)
+        buffer += text
+        currentString += decode(morseCode: buffer, isMorse: isMorse)
     }
-
+/*
     private func updateBubbleMessage(isMorse: Bool){
         let decodedString = decode(morseCode: currentString, isMorse: isMorse)
         let layout = MSMessageTemplateLayout()
@@ -47,15 +48,17 @@ class MessageFactory {
         currentMessage = MSMessage()
         currentMessage.layout = layout
     }
-    
+    */
+    /*
     func getMessage(isMorse: Bool) -> MSMessage {
         updateBubbleMessage(isMorse: isMorse)
         return self.currentMessage
     }
+ */
     
 
     private func decode(morseCode: String, isMorse: Bool) -> String {
-        let pattern = "\\w*([\\.\\-]+)\\ "
+        let pattern = "$([\\.\\-]+)\\ "
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
         if (matches == []) {
@@ -72,16 +75,18 @@ class MessageFactory {
                 : morse2emoji(code: String(morseChar))
             decodedString += textChar
         }
-        print(currentString + " -> " + decodedString)
-        return textChar
+        buffer = ""
+        //currentString += decodedString;
+        return decodedString
     }
     
     func cleanup(){
         currentString = ""
+        buffer = ""
     }
     
     func getText() -> String {
-        getMessage(isMorse: true)
+        //getMessage(isMorse: true)
         //TODO turn . .- - into eat
         return self.currentString
     }
