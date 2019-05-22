@@ -35,6 +35,10 @@ class PreviewViewController: MSMessagesAppViewController {
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ button inputs ~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
+    @IBOutlet weak var shiftButton: UIButton!
+    @IBOutlet weak var CompleteButton: UIButton!
+    
+    
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
     

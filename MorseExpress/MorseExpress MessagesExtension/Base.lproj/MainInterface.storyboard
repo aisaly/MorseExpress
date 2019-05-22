@@ -208,10 +208,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
-                        <outlet property="completeButton" destination="cYa-1l-Zu5" id="tEi-ky-Zzz"/>
+                        <outlet property="CompleteButton" destination="cYa-1l-Zu5" id="BEP-gK-shm"/>
                         <outlet property="dashButton" destination="gJh-Ct-kXY" id="qxX-bP-rkq"/>
                         <outlet property="dotButton" destination="0RO-7m-HeJ" id="KXB-fO-dNE"/>
-                        <outlet property="shiftButton" destination="bcD-T4-ePD" id="Uyh-iZ-YeI"/>
+                        <outlet property="shiftButton" destination="bcD-T4-ePD" id="Ylh-8Z-LZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlF-da-b2A" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,3 +1,10 @@
+//
+//  DecodeMorse.swift
+//  MorseExpress MessagesExtension
+//
+//  Created by Madison Fileman on 5/22/19.
+//  Copyright © 2019 Alexandra Isaly. All rights reserved.
+//
 var standardMorseDict = [
     ".-":       "a",
     "-...":     "b",
@@ -41,11 +48,49 @@ func decodeCharacter(morseCode: String) -> String {
     return standardMorseDict[morseCode]!
 }
 
-func decodeString(morseCode: String) -> String {
-    return morseCode
-        .split(separator: " ")
-        .map{ decodeCharacter(morseCode: String($0)) }
-        .joined(separator: "")
-}
 
-print(decodeString(morseCode: ". .- -"))
+//func decodeString(morseCode: String) -> String {
+//    return morseCode
+//        .split(separator: " ")
+//        .map{ decodeCharacter(morseCode: String($0)) }
+//        .joined(separator: "")
+//} unnecessary maybe?
+
+var emojiDict = [
+    ".....":"😄",
+    "....-":"😆",
+    "...-.":"😅",
+    "...--":"😂",
+    "..-..":"😉",
+    "..-.-":"🤩",
+    "..--.":"🤪",
+    "..---":"😋",
+    ".-...":"🤑",
+    ".-..-":"😑",
+    ".-.-.":"🙄",
+    ".-.--":"😒",
+    ".--..":"😔",
+    ".--.-":"🤤",
+    ".---.":"😴",
+    ".----":"🤮",
+    "-....":"🤠",
+    "-...-":"😎",
+    "-..-.":"🤓",
+    "-..--":"🧐",
+    "-.-..":"😰",
+    "-.-.-":"😱",
+    "-.--.":"😭",
+    "-.---":"😓",
+    "--...":"😩",
+    "--..-":"😡",
+    "--.-.":"🤬",
+    "--.--":"🤡",
+    "---..":"😻",
+    "---.-":"👏",
+    "----.":"🖕",
+    "-----":"👀"
+]
+
+func morse2emoji(code: String)-> String{
+    return emojiDict[code]!
+}
