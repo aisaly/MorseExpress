@@ -102,6 +102,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     @objc func timeHasExceeded(){
+        messageFactory.onPause()
         activeConversation?.insert(messageFactory.getMessage())
     }
     

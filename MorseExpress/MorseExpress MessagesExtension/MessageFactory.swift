@@ -30,7 +30,7 @@ class MessageFactory {
 
     // Logic for message creation
 
-    private func onPause() {
+    func onPause() {
         currentString += " "
     }
 
@@ -49,8 +49,6 @@ class MessageFactory {
     }
     
     func getMessage() -> MSMessage {
-        //currentString = decode(morseCode: currentString)
-        onPause()
         updateBubbleMessage()
         return self.currentMessage
     }
