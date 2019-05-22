@@ -114,8 +114,6 @@ class MessagesViewController: MSMessagesAppViewController {
         }
         
         addChild(controller)
-        controller.view.frame = view.bounds
-        controller.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(controller.view)
         
         controller.didMove(toParent: self)

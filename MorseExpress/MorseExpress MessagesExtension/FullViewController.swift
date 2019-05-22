@@ -30,8 +30,10 @@ class FullViewController: UIViewController {
     }
     */
     @IBAction func dotHandle(_ sender: Any) {
+        print("dot")
     }
     
     @IBAction func dashHandle(_ sender: Any) {
+        print("dash")
     }
 }
