@@ -12,10 +12,8 @@ import Foundation
 
 class MessagesViewController: MSMessagesAppViewController {
     
-    var currentMessage: MSMessage!
-    var currentStringDecoded = ""
-    var currentString = ""
-    var active = false
+    private var currentString: String = ""
+    private var timeoutInSeconds: Double = 1.0
 
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
@@ -77,8 +75,6 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     private var idleTimer: Timer?
-    private var timeoutInSeconds = 1.0
-
     private func resetIdleTimer() {
         if let idleTimer = idleTimer {
             idleTimer.invalidate()
@@ -99,31 +95,42 @@ class MessagesViewController: MSMessagesAppViewController {
 
     @IBAction func dotHandle(_ sender: Any) {
         insertText(text: ".")
+        resetIdleTimer()
     }
     
     @IBAction func dashHandle(_ sender: Any) {
         insertText(text: "-")
+        resetIdleTimer()
     }
 
-    private func onPause(){
+    // Logic for message creation
+    
+    private func onPause() {
         currentString += " "
-        decode()
         updateBubbleMessage()
     }
 
     private func insertText(text: String) {
-        currentString += text
         print(currentString)
-        resetIdleTimer()
+        currentString += text
         updateBubbleMessage()
     }
+    
+    private func updateBubbleMessage(){
+        let decodedString = decode(morseCode: currentString)
+        let layout = MSMessageTemplateLayout()
+        layout.caption = decodedString
+        let message = MSMessage()
+        message.layout = layout
+        activeConversation?.insert(message, completionHandler: nil)
+    }
 
-    private func decode() {
+    private func decode(morseCode: String) -> String {
         let pattern = "\\w*([\\.\\-]+)\\ "
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
         if (matches == []) {
-            return
+            return ""
         }
         var decodedString = ""
         matches.forEach { match in
@@ -133,16 +140,8 @@ class MessagesViewController: MSMessagesAppViewController {
             let textChar = decodeCharacter(morseCode: String(morseChar))
             decodedString += textChar
         }
-        currentStringDecoded = decodedString
-        print(currentString + " -> " + currentStringDecoded)
-    }
-
-    private func updateBubbleMessage(){
-        let layout = MSMessageTemplateLayout()
-        layout.caption = currentStringDecoded
-        let message = MSMessage()
-        message.layout = layout
-        activeConversation?.insert(message, completionHandler: nil)
+        print(currentString + " -> " + decodedString)
+        return decodedString
     }
 }
 
