@@ -26,7 +26,6 @@ import Foundation
 class PreviewViewController: MSMessagesAppViewController {
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dotButton.layer.cornerRadius = 6
