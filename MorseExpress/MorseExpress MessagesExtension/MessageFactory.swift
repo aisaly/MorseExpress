@@ -17,8 +17,8 @@ class MessageFactory {
     private var timeoutInSeconds: Double = 1.0
     private var currentMessage: MSMessage = MSMessage()
 
-    @objc private func timeHasExceeded() {
-        onPause()
+    @objc private func timeHasExceeded(isMorse: Bool) {
+        onPause(isMorse: isMorse)
     }
 
     func onDot(isMorse: Bool){
@@ -31,8 +31,9 @@ class MessageFactory {
 
     // Logic for message creation
 
-    func onPause() {
-        currentString += " "
+    func onPause(isMorse: Bool) {
+        buffer += " "
+        currentString += decode(morseCode: buffer, isMorse: isMorse)
     }
 
     private func insertText(text: String, isMorse: Bool) {
@@ -58,9 +59,9 @@ class MessageFactory {
     
 
     private func decode(morseCode: String, isMorse: Bool) -> String {
-        let pattern = "$([\\.\\-]+)\\ "
+        let pattern = "\\w*([\\.\\-]+)\\ "
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
+        let matches = regex.matches(in:buffer, range:NSMakeRange(0, buffer.utf16.count))
         if (matches == []) {
             return ""
         }
@@ -68,11 +69,12 @@ class MessageFactory {
         var textChar: String = ""
         matches.forEach { match in
             let range = match.range(at:1)
-            let swiftRange = Range(range, in: currentString)
-            let morseChar = currentString[swiftRange!]
+            let swiftRange = Range(range, in: buffer)
+            let morseChar = buffer[swiftRange!]
             textChar = isMorse ?
                 decodeCharacter(morseCode: String(morseChar))
                 : morse2emoji(code: String(morseChar))
+            print("decoded", textChar)
             decodedString += textChar
         }
         buffer = ""
@@ -86,8 +88,11 @@ class MessageFactory {
     }
     
     func getText() -> String {
+        print("currentstring", currentString)
+        print("buffer", buffer)
         //getMessage(isMorse: true)
         //TODO turn . .- - into eat
+        print(self.currentString)
         return self.currentString
     }
 }

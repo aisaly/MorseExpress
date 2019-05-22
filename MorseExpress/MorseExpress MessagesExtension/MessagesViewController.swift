@@ -14,9 +14,9 @@ protocol ViewControllerDelegate: AnyObject {
 
 
 class MessagesViewController: MSMessagesAppViewController {
-    static var isMorse: Bool = true
     static var singleton: MessagesViewController?
     weak var delegate: ViewControllerDelegate?
+    static var isMorse: Bool = true
     static var messageFactory: MessageFactory = MessageFactory()
     
     override func viewDidLoad() {
@@ -101,47 +101,6 @@ class MessagesViewController: MSMessagesAppViewController {
             child.view.removeFromSuperview()
             child.removeFromParent()
         }
-    }
-    
-    static func sendDot() {
-        messageFactory.onDot(isMorse: isMorse)
-        resetIdleTimer()
-    }
-    static func sendDash() {
-        messageFactory.onDash(isMorse: isMorse)
-        resetIdleTimer()
-    }
-    static var idleTimer: Timer?
-    static var timeoutInSeconds: Double = 1.0
-    
-    static func resetIdleTimer() {
-        if let idleTimer = idleTimer {
-            idleTimer.invalidate()
-        }
-        
-        idleTimer = Timer.scheduledTimer(
-            timeInterval: timeoutInSeconds,
-            target: self,
-            selector: #selector(timeHasExceeded),
-            userInfo: nil,
-            repeats: false
-        )
-    }
-    static func getText() -> String{
-        return messageFactory.getText()
-    }
-    
-    static func sendText(text: String) {
-        let message = MSMessage()
-        let layout = MSMessageTemplateLayout()
-        layout.caption = text
-        message.layout = layout
-        MessagesViewController.singleton?.activeConversation?.insert(message)
-    }
-    
-    @objc static func timeHasExceeded() {
-        messageFactory.onPause() // when timeout has happened, reflect that in the text
-        //MessagesViewController.singleton?.activeConversation?.insert(messageFactory.getMessage(isMorse: MessagesViewController.isMorse))
     }
 
 }
