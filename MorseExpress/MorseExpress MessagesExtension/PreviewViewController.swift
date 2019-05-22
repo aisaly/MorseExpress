@@ -37,8 +37,11 @@ class PreviewViewController: MSMessagesAppViewController {
     @IBOutlet weak var shiftButton: UIButton!
     @IBOutlet weak var CompleteButton: UIButton!
     
+    var morseORemoji = true
+    
     
     @IBAction func shiftHandle(_ sender: Any) {
+        morseORemoji = !morseORemoji
         print("emoji time!")
     }
     @IBAction func completeHandle(_ sender: Any) {
@@ -61,14 +64,11 @@ class PreviewViewController: MSMessagesAppViewController {
     
     
     //add a send button here and
-        //call sendBubbleMessage from MessageViewController!
+        //call sendMessage from MessageViewController!
         //reset timeout
         //reset strings (call cleanup)
     
     
     //add a "shift" button here, will toggle emojis or text
     
-    
-    
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~ timer handling ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }

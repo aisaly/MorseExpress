@@ -17,8 +17,6 @@ class FullViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dotButton.layer.cornerRadius = 6
-        dashButton.layer.cornerRadius = 6
     }
     
 
