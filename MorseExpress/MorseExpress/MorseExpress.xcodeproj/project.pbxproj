@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DC6DE6022958C8100843CF2 /* DecodeMorse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6DE5F22958C8100843CF2 /* DecodeMorse.swift */; };
 		A9BB6CEF229440E4002B136C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6CEE229440E4002B136C /* Assets.xcassets */; };
 		A9BB6CF6229440E4002B136C /* MorseExpress MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9BB6CFB229440E4002B136C /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BB6CFA229440E4002B136C /* Messages.framework */; };
 		A9BB6CFE229440E4002B136C /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB6CFD229440E4002B136C /* MessagesViewController.swift */; };
 		A9BB6D01229440E4002B136C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6CFF229440E4002B136C /* MainInterface.storyboard */; };
 		A9BB6D03229440E5002B136C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6D02229440E5002B136C /* Assets.xcassets */; };
+		A9BB6D3522947E44002B136C /* FullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB6D3422947E44002B136C /* FullViewController.swift */; };
+		A9BB6D3722947E51002B136C /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB6D3622947E51002B136C /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1DC6DE5F22958C8100843CF2 /* DecodeMorse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeMorse.swift; sourceTree = "<group>"; };
 		A9BB6CEB229440E3002B136C /* MorseExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB6CEE229440E4002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BB6CF0229440E4002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		A9BB6D00229440E4002B136C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A9BB6D02229440E5002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BB6D04229440E5002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BB6D3422947E44002B136C /* FullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullViewController.swift; sourceTree = "<group>"; };
+		A9BB6D3622947E51002B136C /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +106,12 @@
 		A9BB6CFC229440E4002B136C /* MorseExpress MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
-				1DC6DE5F22958C8100843CF2 /* DecodeMorse.swift */,
 				A9BB6CFD229440E4002B136C /* MessagesViewController.swift */,
 				A9BB6CFF229440E4002B136C /* MainInterface.storyboard */,
 				A9BB6D02229440E5002B136C /* Assets.xcassets */,
 				A9BB6D04229440E5002B136C /* Info.plist */,
+				A9BB6D3422947E44002B136C /* FullViewController.swift */,
+				A9BB6D3622947E51002B136C /* PreviewViewController.swift */,
 			);
 			path = "MorseExpress MessagesExtension";
 			sourceTree = "<group>";
@@ -212,8 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DC6DE6022958C8100843CF2 /* DecodeMorse.swift in Sources */,
 				A9BB6CFE229440E4002B136C /* MessagesViewController.swift in Sources */,
+				A9BB6D3522947E44002B136C /* FullViewController.swift in Sources */,
+				A9BB6D3722947E51002B136C /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
