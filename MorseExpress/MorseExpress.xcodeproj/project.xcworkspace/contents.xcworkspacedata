@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MorseExpress.xcodeproj">
+      location = "group:/Users/alexandrai/Documents/MorseExpress/MorseExpress/MorseExpress MessagesExtension/emojiIcon.png">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/alexandrai/Documents/MorseExpress/MorseExpress/MorseExpress MessagesExtension/sendIcon.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

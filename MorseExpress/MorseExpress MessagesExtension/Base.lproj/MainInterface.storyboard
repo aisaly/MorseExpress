@@ -45,7 +45,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eke-fs-sDp">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="eke-fs-sDp">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -53,7 +53,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yNW-Om-ZPQ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="yNW-Om-ZPQ">
                                         <rect key="frame" x="67.5" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -61,7 +61,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YJX-ee-zVx">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="YJX-ee-zVx">
                                         <rect key="frame" x="135" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -69,7 +69,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="y0K-g7-H7h">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="y0K-g7-H7h">
                                         <rect key="frame" x="202.5" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -77,7 +77,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1Ag-MX-pIA">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="1Ag-MX-pIA">
                                         <rect key="frame" x="270" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -143,7 +143,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="dotHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="W2h-so-mt4"/>
+                                            <action selector="dotHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="PkT-HL-b2O"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8U-W1-TJL">
@@ -165,7 +165,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="xyh-bV-Qg1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" backgroundImage="emojiicon.png">
+                                                <state key="normal" backgroundImage="emojiIcon.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -178,7 +178,7 @@
                                                     <constraint firstAttribute="width" secondItem="cYa-1l-Zu5" secondAttribute="height" multiplier="1:1" id="BsQ-py-Kan"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="qD6-rs-NDD"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="sendicon.png">
+                                                <state key="normal" backgroundImage="sendIcon.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -233,7 +233,7 @@
                     <connections>
                         <outlet property="CompleteButton" destination="cYa-1l-Zu5" id="BEP-gK-shm"/>
                         <outlet property="dashButton" destination="gJh-Ct-kXY" id="qxX-bP-rkq"/>
-                        <outlet property="dotButton" destination="0RO-7m-HeJ" id="KXB-fO-dNE"/>
+                        <outlet property="dotButton" destination="0RO-7m-HeJ" id="6Jn-WZ-7Mn"/>
                         <outlet property="shiftButton" destination="bcD-T4-ePD" id="Ylh-8Z-LZL"/>
                     </connections>
                 </viewController>
@@ -243,7 +243,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="emojiicon.png" width="122.87999725341797" height="122.87999725341797"/>
-        <image name="sendicon.png" width="48" height="48"/>
+        <image name="emojiIcon.png" width="122.87999725341797" height="122.87999725341797"/>
+        <image name="sendIcon.png" width="45.119998931884766" height="44.880001068115234"/>
     </resources>
 </document>

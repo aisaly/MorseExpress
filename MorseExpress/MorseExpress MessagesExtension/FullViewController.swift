@@ -9,14 +9,9 @@
 import UIKit
 
 class FullViewController: UIViewController {
-
-    @IBOutlet weak var dotButton: UIButton!
-    @IBOutlet weak var dashButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dotButton.layer.cornerRadius = 6
-        dashButton.layer.cornerRadius = 6
     }
     
 
@@ -29,9 +24,4 @@ class FullViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func dotHandle(_ sender: Any) {
-    }
-    
-    @IBAction func dashHandle(_ sender: Any) {
-    }
 }
