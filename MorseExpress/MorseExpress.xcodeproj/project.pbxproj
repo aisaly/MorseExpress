@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DC6DE6022958C8100843CF2 /* DecodeMorse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6DE5F22958C8100843CF2 /* DecodeMorse.swift */; };
+		1DC6DE6222958D4F00843CF2 /* MessageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6DE6122958D4F00843CF2 /* MessageFactory.swift */; };
 		A9BB6CEF229440E4002B136C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6CEE229440E4002B136C /* Assets.xcassets */; };
 		A9BB6CF6229440E4002B136C /* MorseExpress MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9BB6CFB229440E4002B136C /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BB6CFA229440E4002B136C /* Messages.framework */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1DC6DE5F22958C8100843CF2 /* DecodeMorse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeMorse.swift; sourceTree = "<group>"; };
+		1DC6DE6122958D4F00843CF2 /* MessageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFactory.swift; sourceTree = "<group>"; };
 		A9BB6CEB229440E3002B136C /* MorseExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB6CEE229440E4002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BB6CF0229440E4002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				A9BB6CFF229440E4002B136C /* MainInterface.storyboard */,
 				A9BB6D02229440E5002B136C /* Assets.xcassets */,
 				A9BB6D04229440E5002B136C /* Info.plist */,
+				1DC6DE6122958D4F00843CF2 /* MessageFactory.swift */,
 			);
 			path = "MorseExpress MessagesExtension";
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DC6DE6222958D4F00843CF2 /* MessageFactory.swift in Sources */,
 				1DC6DE6022958C8100843CF2 /* DecodeMorse.swift in Sources */,
 				A9BB6CFE229440E4002B136C /* MessagesViewController.swift in Sources */,
 			);
