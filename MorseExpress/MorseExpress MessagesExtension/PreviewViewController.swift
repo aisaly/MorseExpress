@@ -49,6 +49,14 @@ class PreviewViewController: MSMessagesAppViewController {
     }
     
     
+    //add a send button here and
+        //call sendBubbleMessage from MessageViewController!
+        //reset timeout
+        //reset strings (call cleanup)
+    
+    
+    //add a "shift" button here, will toggle emojis or text
+    
     
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ timer handling ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +78,7 @@ class PreviewViewController: MSMessagesAppViewController {
     }
     
     @objc private func timeHasExceeded() {
-        onPause() // when timeout has happened, reflect that in the text
+        onPause() // THIS IS NEVER CALLED when timeout has happened, reflect that in the text
         activeConversation?.insert(self.getMessage())
     }
     
@@ -98,11 +106,7 @@ class PreviewViewController: MSMessagesAppViewController {
     
     private func updateBubbleMessage() //called everytime youre adding new characters
     {
-        currentStringDecoded = decode(morseCode: currentString) //should only return one character
-        //        let layout = MSMessageTemplateLayout() //not working rn
-        //        layout.caption = decodedString         //ditto
-        //        currentMessage = MSMessage()
-        //        currentMessage.layout = layout
+        currentStringDecoded = decode(morseCode: currentString)
     }
     
     private func decode(morseCode: String) -> String {
@@ -110,7 +114,7 @@ class PreviewViewController: MSMessagesAppViewController {
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
         if (matches == []) {
-            return ""
+            return " "
         }
         var decodedString = ""
         matches.forEach { match in
@@ -126,13 +130,15 @@ class PreviewViewController: MSMessagesAppViewController {
     }
     
     
-    private func onPause(){
+    private func onPause(){ //DOESNT ADD SPACE TO THE DECODED STRING
         currentString += " "
         updateBubbleMessage()
     }
     
+    
     func cleanup(){
         currentString = ""
+        currentStringDecoded = ""
     }
     
     

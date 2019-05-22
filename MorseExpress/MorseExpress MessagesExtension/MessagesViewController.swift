@@ -15,6 +15,19 @@ class MessagesViewController: MSMessagesAppViewController {
         super.viewDidLoad()
     }
     
+    
+    func sendBubbleMessage(finalDecodedMessage: String){
+        let layout = MSMessageTemplateLayout()
+        layout.caption = finalDecodedMessage
+        
+        let currentMessage = MSMessage() //current object message to be sent
+        currentMessage.layout = layout
+        
+        activeConversation?.insert(currentMessage, completionHandler: nil)
+    }
+    
+    
+    
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
