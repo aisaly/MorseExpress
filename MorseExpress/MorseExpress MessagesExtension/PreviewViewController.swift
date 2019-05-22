@@ -38,12 +38,19 @@ class PreviewViewController: MSMessagesAppViewController {
     @IBOutlet weak var shiftButton: UIButton!
     @IBOutlet weak var CompleteButton: UIButton!
     
+    var morseORemoji = true
+    
     
     @IBAction func shiftHandle(_ sender: Any) {
+        morseORemoji = !morseORemoji
         print("emoji time!")
     }
     @IBAction func completeHandle(_ sender: Any) {
         print("send it")
+        
+        
+        
+        
         cleanup()
     }
     
@@ -62,7 +69,7 @@ class PreviewViewController: MSMessagesAppViewController {
     
     
     //add a send button here and
-        //call sendBubbleMessage from MessageViewController!
+        //call sendMessage from MessageViewController!
         //reset timeout
         //reset strings (call cleanup)
     
@@ -91,7 +98,7 @@ class PreviewViewController: MSMessagesAppViewController {
     
     @objc private func timeHasExceeded() {
         onPause() // when timeout has happened, reflect that in the text
-        activeConversation?.insert(self.getMessage())
+        //activeConversation?.insert(self.getMessage())
     }
     
     
@@ -101,24 +108,21 @@ class PreviewViewController: MSMessagesAppViewController {
     private var currentMessage: MSMessage = MSMessage()
     var currentStringDecoded = "" //current readable string (morse2this)
     var currentString = "" //current morse string
+    var toBeDecoded = ""
     var active = false
     
     
     
-    func getMessage() -> MSMessage {
-        updateBubbleMessage()
-        return self.currentMessage
-    }
-    
-    
     private func insertText(text: String) {
         currentString += text
-        updateBubbleMessage()
+        toBeDecoded += text
     }
     
     private func updateBubbleMessage() //called everytime youre adding new characters
     {
-        currentStringDecoded = decode(morseCode: currentString)
+        //print("tobedecoded " + toBeDecoded)
+        currentStringDecoded += decode(morseCode: toBeDecoded)
+        print(currentStringDecoded)
     }
     
     private func decode(morseCode: String) -> String {
@@ -126,25 +130,29 @@ class PreviewViewController: MSMessagesAppViewController {
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matches(in:currentString, range:NSMakeRange(0, currentString.utf16.count))
         if (matches == []) {
-            return " "
+            return ""
         }
-        var decodedString = ""
+        var char = ""
+        print(toBeDecoded + " to be decoded")
         matches.forEach { match in
             let range = match.range(at:1)
             let swiftRange = Range(range, in: currentString)
             let morseChar = currentString[swiftRange!]
-            let textChar = decodeCharacter(morseCode:String(morseChar) )
-            //morse2emoji(code: String(morseChar)) if u want emojis,
-            decodedString += textChar
+            char = morseORemoji ?
+                 decodeCharacter(morseCode:String(morseChar) ) //if u want morse to text
+            :
+                morse2emoji(code: String(morseChar)) //if u want morse to emojis
+            //print(char + "char")
         }
-        print(currentString + " > " + decodedString)
-        return decodedString
+        return char
     }
     
     
     private func onPause(){ //DOESNT ADD SPACE TO THE DECODED STRING
         currentString += " "
+        
         updateBubbleMessage()
+        toBeDecoded = ""
     }
     
     

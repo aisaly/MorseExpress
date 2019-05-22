@@ -42,10 +42,15 @@ var standardMorseDict = [
     "--...":    "7",
     "---..":    "8",
     "----.":    "9",
+
 ]
 
 func decodeCharacter(morseCode: String) -> String {
-    return standardMorseDict[morseCode]!
+    if let rval = standardMorseDict[morseCode] {
+        return rval
+    } else {
+        return ""
+    }
 }
 
 
@@ -88,9 +93,14 @@ var emojiDict = [
     "---..":"😻",
     "---.-":"👏",
     "----.":"🖕",
-    "-----":"👀"
+    "-----":"👀",
+    "":"",
+    " ":" "
 ]
 
 func morse2emoji(code: String)-> String{
-    return emojiDict[code]!
+    if code.count == 5{
+        return emojiDict[code]!}
+    else{
+        return ""}
 }
