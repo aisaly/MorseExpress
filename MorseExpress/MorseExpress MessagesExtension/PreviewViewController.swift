@@ -25,6 +25,7 @@ import Foundation
 import NotificationCenter
 
 class PreviewViewController: MSMessagesAppViewController {
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class PreviewViewController: MSMessagesAppViewController {
         }
     }
     @IBAction func completeHandle(_ sender: Any) {
-        MessagesViewController.sendText(text: msgPreview.text!)
+        PreviewViewController.sendText(text: msgPreview.text!)
         msgPreview.text = ""
     }
     
@@ -61,15 +62,60 @@ class PreviewViewController: MSMessagesAppViewController {
     @IBOutlet weak var dashButton: UIButton!
     
     @IBAction func dotHandle(_ sender: Any) {
-        MessagesViewController.sendDot()
-        msgPreview.text = MessagesViewController.getText()
+        sendDot()
+        msgPreview.text = MessagesViewController.messageFactory.getText()
     }
     
     @IBAction func dashHandle(_ sender: Any) {
-        MessagesViewController.sendDash()
-        msgPreview.text = MessagesViewController.getText()
+        sendDash()
+        msgPreview.text = MessagesViewController.messageFactory.getText()
     }
     
     
     @IBOutlet weak var msgPreview: UILabel!
+    
+    
+    @objc func timeHasExceeded() {
+        MessagesViewController.messageFactory.onPause(isMorse: MessagesViewController.isMorse) // when timeout has happened, reflect that in the text
+        //MessagesViewController.singleton?.activeConversation?.insert(messageFactory.getMessage(isMorse: MessagesViewController.isMorse))
+        MessagesViewController.messageFactory.onPause(isMorse: MessagesViewController.isMorse)
+        msgPreview.text = MessagesViewController.messageFactory.getText()
+    }
+    
+    
+     func sendDot() {
+        MessagesViewController.messageFactory.onDot(isMorse: MessagesViewController.isMorse)
+        resetIdleTimer()
+    }
+    
+     func sendDash() {
+        MessagesViewController.messageFactory.onDash(isMorse: MessagesViewController.isMorse)
+        resetIdleTimer()
+    }
+    
+     var idleTimer: Timer?
+     var timeoutInSeconds: Double = 1.0
+    
+     func resetIdleTimer() {
+        if let idleTimer = idleTimer {
+            idleTimer.invalidate()
+        }
+        
+        idleTimer = Timer.scheduledTimer(
+            timeInterval: timeoutInSeconds,
+            target: self,
+            selector: #selector(timeHasExceeded),
+            userInfo: nil,
+            repeats: false
+        )
+    }
+    
+    
+    static func sendText(text: String) {
+        let message = MSMessage()
+        let layout = MSMessageTemplateLayout()
+        layout.caption = text
+        message.layout = layout
+        MessagesViewController.singleton?.activeConversation?.insert(message)
+    }
 }

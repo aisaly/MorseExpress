@@ -31,6 +31,10 @@ class FullViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
     }
     
+    static func getText() -> String{
+        return MessagesViewController.messageFactory.getText()
+    }
+    
 
     /*
     // MARK: - Navigation
