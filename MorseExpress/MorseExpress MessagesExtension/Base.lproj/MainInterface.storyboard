@@ -152,6 +152,9 @@
                                                 <state key="normal" title="Send">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="completeHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="zi4-CP-8gM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-T4-ePD">
                                                 <rect key="frame" x="10" y="10.5" width="38" height="30"/>
@@ -162,6 +165,9 @@
                                                 <state key="normal" title="Emoji">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="shiftHandle:" destination="mcn-3v-M5K" eventType="touchUpInside" id="lQr-hL-Zyo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -37,6 +37,17 @@ class PreviewViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var shiftButton: UIButton!
     @IBOutlet weak var CompleteButton: UIButton!
+    
+    
+    @IBAction func shiftHandle(_ sender: Any) {
+        print("emoji time!")
+    }
+    @IBAction func completeHandle(_ sender: Any) {
+        print("send it")
+        cleanup()
+    }
+    
+    
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var dashButton: UIButton!
     
@@ -79,7 +90,7 @@ class PreviewViewController: MSMessagesAppViewController {
     }
     
     @objc private func timeHasExceeded() {
-        onPause() // THIS IS NEVER CALLED when timeout has happened, reflect that in the text
+        onPause() // when timeout has happened, reflect that in the text
         activeConversation?.insert(self.getMessage())
     }
     
@@ -122,9 +133,9 @@ class PreviewViewController: MSMessagesAppViewController {
             let range = match.range(at:1)
             let swiftRange = Range(range, in: currentString)
             let morseChar = currentString[swiftRange!]
-            //let textChar = decodeCharacter(morseCode:String(morseChar) )
+            let textChar = decodeCharacter(morseCode:String(morseChar) )
             //morse2emoji(code: String(morseChar)) if u want emojis,
-            //decodedString += textChar
+            decodedString += textChar
         }
         print(currentString + " > " + decodedString)
         return decodedString
