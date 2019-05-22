@@ -117,7 +117,8 @@ class PreviewViewController: MSMessagesAppViewController {
             let range = match.range(at:1)
             let swiftRange = Range(range, in: currentString)
             let morseChar = currentString[swiftRange!]
-            let textChar = decodeCharacter(morseCode: String(morseChar))
+            let textChar = decodeCharacter(morseCode:String(morseChar) )
+            //morse2emoji(code: String(morseChar)) if u want emojis,
             decodedString += textChar
         }
         print(currentString + " > " + decodedString)
