@@ -12,6 +12,7 @@
 		A9172B722295E4BD0088E5B7 /* emojiIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A9172B6F2295E3800088E5B7 /* emojiIcon.png */; };
 		A9172B732295E4C00088E5B7 /* sendIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A9172B702295E3830088E5B7 /* sendIcon.png */; };
 		A9765C902295F7A000E6F86B /* selectedEmoji.png in Resources */ = {isa = PBXBuildFile; fileRef = A9765C8F2295F7A000E6F86B /* selectedEmoji.png */; };
+		A9765C922295F95600E6F86B /* MessageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9765C912295F95600E6F86B /* MessageFactory.swift */; };
 		A9BB6CEF229440E4002B136C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB6CEE229440E4002B136C /* Assets.xcassets */; };
 		A9BB6CF6229440E4002B136C /* MorseExpress MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9BB6CF5229440E4002B136C /* MorseExpress MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9BB6CFB229440E4002B136C /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BB6CFA229440E4002B136C /* Messages.framework */; };
@@ -50,6 +51,7 @@
 		A9172B6F2295E3800088E5B7 /* emojiIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emojiIcon.png; path = "/Users/alexandrai/Documents/MorseExpress/MorseExpress/MorseExpress MessagesExtension/emojiIcon.png"; sourceTree = "<absolute>"; };
 		A9172B702295E3830088E5B7 /* sendIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendIcon.png; path = "/Users/alexandrai/Documents/MorseExpress/MorseExpress/MorseExpress MessagesExtension/sendIcon.png"; sourceTree = "<absolute>"; };
 		A9765C8F2295F7A000E6F86B /* selectedEmoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectedEmoji.png; path = ../../../../Desktop/selectedEmoji.png; sourceTree = "<group>"; };
+		A9765C912295F95600E6F86B /* MessageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFactory.swift; sourceTree = "<group>"; };
 		A9BB6CEB229440E3002B136C /* MorseExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB6CEE229440E4002B136C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BB6CF0229440E4002B136C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				A9172B6F2295E3800088E5B7 /* emojiIcon.png */,
 				A9BB6CFD229440E4002B136C /* MessagesViewController.swift */,
 				A9BB6CFF229440E4002B136C /* MainInterface.storyboard */,
+				A9765C912295F95600E6F86B /* MessageFactory.swift */,
 				A9BB6D02229440E5002B136C /* Assets.xcassets */,
 				A9BB6D04229440E5002B136C /* Info.plist */,
 				A9BB6D3422947E44002B136C /* FullViewController.swift */,
@@ -233,6 +236,7 @@
 				A9BB6CFE229440E4002B136C /* MessagesViewController.swift in Sources */,
 				A9BB6D3522947E44002B136C /* FullViewController.swift in Sources */,
 				524F065122959D9F006EE11D /* DecodeMorse.swift in Sources */,
+				A9765C922295F95600E6F86B /* MessageFactory.swift in Sources */,
 				A9BB6D3722947E51002B136C /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
